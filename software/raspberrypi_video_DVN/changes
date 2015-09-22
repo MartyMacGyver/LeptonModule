@@ -1,0 +1,18 @@
+Change log to fix the red square at startup.
+My system Raspberry Pi model B2.
+Flir Leptom with breakout board.
+
+NOTICE I changed the pin target in the video program to match the capture program. YOU WILL HAVE to change it back if you want this to work with the video pin out pattern.
+
+changed spi speed to 15000000;
+changed spi target to "/dev/spidev0.0" from 0.1 (changes target pins to match capture)
+changed order of startup in Lepton Thread.cpp
+added some of the capture startup code.
+added a startup script (runVideo.sh)
+This script toggles the gpio lines and makes the project and the sdk. You can delete the part that builds the project every time if you do not like it.
+
+Note: all these changes may not be needed. I have not had the time to try every combination. If this doesnt work make sure the pin outs described in the code match your system.
+
+This combination fixed it for me. Thanks to the Google Group for giving me some of these parts and for helping me fix several other problems. I may have made other changes to my system
+not documented here. I know I fixed the flat field correction as described on the Google Group. 
+Dan Van Noord
